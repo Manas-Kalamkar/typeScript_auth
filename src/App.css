@@ -1,0 +1,11 @@
+.product{
+    border:1px black solid;
+    padding:10px;
+    width:200px;
+}
+
+#products{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+}
