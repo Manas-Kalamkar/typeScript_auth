@@ -1,14 +1,19 @@
 import React from 'react'
 import OrderStateDisplay from './OrderStateDisplay';
-import SelectAction  from './SelectAction';
-import Products from './Products'; 
+import SelectAction from './SelectAction';
+import Products from './Products';
 import './App.css'
-const App : React.FC = () => {
+import type { OrderState } from './types';
+const App: React.FC = () => {
+
+  const [state, setstate] = React.useState<OrderState | undefined>(undefined)
+  console.log(state);
   return (
-    <div className='App'>
-      <Products />
-      <OrderStateDisplay />
-      <SelectAction />
+    <div id='App'>
+
+      <Products setstate={setstate} />
+      <OrderStateDisplay state={state} />
+      <SelectAction state={state} setstate={setstate} />
     </div>
   )
 }
